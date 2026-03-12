@@ -1,57 +1,60 @@
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
+    background: radial-gradient(circle at top left, #00b7af, #10181f);
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
 .container {
     text-align: center;
     padding: 2rem;
-    max-width: 90vw;
 }
 
-.hello-text {
+h1 {
     font-size: clamp(3rem, 10vw, 8rem);
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
-.subtitle {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    opacity: 0.9;
-    animation: fadeInUp 1s ease-out 0.5s both;
+
+p {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    opacity: 0.8;
+    animation: fadeIn 3s ease-in-out;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* High contrast for readability from distance */
+.animated {
+    transition: color 0.5s ease;
+}
+
+body:hover .animated {
+    color: #ffffffcc;
+}
+
+/* Handle dark/light mode automatically */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: radial-gradient(circle at top left, #00b7af, #10181f);
     }
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
+@media (prefers-color-scheme: light) {
+    body {
+        background: radial-gradient(circle at top left, #00b7af, #ffffff);
+        color: #10181f;
     }
-    
-    .hello-text {
-        margin-bottom: 0.5rem;
+    .animated {
+        color: #10181n;
     }
 }

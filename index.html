@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="./manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="styles.css?v=2k9m8p">
     <title>Hello World</title>
-    <link rel="stylesheet" href="styles.css?v=abc123">
 </head>
 <body>
     <div class="container">
-        <h1 class="hello-text">Hello World</h1>
-        <p class="subtitle">Welcome to Digital Signage</p>
+        <h1 class="animated">Hello World</h1>
+        <p class="animated">This is a simple digital signage app</p>
     </div>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./sw.js')
-          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
-          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
-      });
-    }
-  </script>
 </body>
 </html>
